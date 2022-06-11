@@ -48,7 +48,7 @@
 	}
 </script>
 
-<div class="bg-gradient-to-b from-slate-900 to-black h-96 w-full">
+<div class="bg-gradient-to-b from-slate-900 to-black w-full pb-16">
 	<div class="md:px-20 px-4 py-8">
 		<div
 			class="flex flex-col space-y-6 md:space-y-0 md:flex-row md:space-x-3 items-center  justify-between"
@@ -57,7 +57,7 @@
 				FormEasy <span class="font-normal">| Svelte Demo</span>
 			</div>
 			<a
-				href="#"
+				href="https://github.com/Meldiron/formeasy-svelte/"
 				class="flex items-center justify-center space-x-3 text-base font-medium leading-none text-[#181717] py-4 px-5 bg-white rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500 hover:bg-gray-200"
 			>
 				<svg
@@ -73,128 +73,147 @@
 			</a>
 		</div>
 	</div>
-	<div class="w-full flex items-center justify-center my-12">
-		<form
-			on:submit|preventDefault={submitForm}
-			class="absolute top-40 bg-white shadow rounded py-12 lg:px-28 px-8"
-		>
-			<p class="md:text-3xl text-xl font-bold leading-7 text-center text-gray-700 ">
-				Let's Make a Contact Form
-			</p>
-			<div class="md:flex items-center mt-12">
-				<div class="md:w-72 flex flex-col">
-					<label for="name" class="text-base font-semibold leading-none text-gray-800 ">Name</label>
-					<input
-						bind:value={name}
-						id="name"
-						tabindex="0"
-						arial-label="Please input name"
-						type="text"
-						class="text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-100"
-						placeholder="Please input name"
-					/>
-				</div>
-				<div class="md:w-72 flex flex-col md:ml-6 md:mt-0 mt-4">
-					<label for="email" class="text-base font-semibold leading-none text-gray-800 "
-						>Email Address</label
-					>
-					<input
-						bind:value={email}
-						id="email"
-						tabindex="0"
-						arial-label="Please input email address"
-						type="email"
-						class="text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-100"
-						placeholder="Please input email address"
-					/>
-				</div>
-			</div>
-			<div class="md:flex items-center mt-8">
-				<div class="md:w-72 flex flex-col">
-					<label for="company" class="text-base font-semibold leading-none text-gray-800 "
-						>Company name</label
-					>
-					<input
-						bind:value={company}
-						id="company"
-						tabindex="0"
-						arial-label="Please input company name"
-						type="text"
-						class="text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-100"
-						placeholder="Please input company name"
-					/>
-				</div>
-				<div class="md:w-72 flex flex-col md:ml-6 md:mt-0 mt-4">
-					<label for="country" class="text-base font-semibold leading-none text-gray-800 "
-						>Country</label
-					>
-					<input
-						bind:value={country}
-						id="country"
-						tabindex="0"
-						arial-label="Please input country name"
-						type="text"
-						class="text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-100"
-						placeholder="Please input country name"
-					/>
-				</div>
-			</div>
-			<div>
-				<div class="w-full flex flex-col mt-8">
-					<label for="message" class="text-base font-semibold leading-none text-gray-800 "
-						>Message</label
-					>
-					<textarea
-						bind:value={message}
-						required={true}
-						tabindex="0"
-						aria-label="leave a message"
-						type="text"
-						id="message"
-						class="h-36 text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-100 resize-none"
-					/>
-				</div>
-			</div>
-			<p class="text-xs leading-3 text-gray-600  mt-4">
-				<span class="text-red-500 font-bold">Anything you put here is public!</span> Don't put your personal
-				data in the form please. Just use something fake, thanks!
-			</p>
-			<div class="flex items-center justify-center w-full">
-				<button
-					type="submit"
-					class="flex items-center justify-center space-x-3 mt-9 text-base font-semibold leading-none text-white py-4 px-10 bg-slate-700 rounded hover:bg-slate-600 focus:ring-2 focus:ring-offset-2 focus:ring-slate-700 focus:outline-none"
-				>
-					{#if loading}
-						<svg
-							class="w-5 h-5 animate-spin"
-							xmlns="http://www.w3.org/2000/svg"
-							fill="none"
-							viewBox="0 0 24 24"
-						>
-							<circle
-								class="opacity-25"
-								cx="12"
-								cy="12"
-								r="10"
-								stroke="currentColor"
-								stroke-width="4"
-							/>
-							<path
-								class="opacity-75"
-								fill="currentColor"
-								d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-							/>
-						</svg>
-					{/if}
-					<span> SUBMIT </span></button
-				>
-			</div>
 
-			{#if responseMessage}
-				<p class="text-center mt-6 font-light leading-3 text-blue-500">
-					{responseMessage}
-				</p>
-			{/if}
-		</form>
+	<div class="flex flex-col items-center justify-center pb-8">
+		<p class="uppercase font-light text-lg mb-2 text-white">Made using</p>
+		<a href="https://github.com/Basharath/FormEasy">
+			<img src="/formeasy-logo.svg" class="h-10" alt="FormEasy logo" />
+		</a>
 	</div>
+</div>
+
+<div class="w-full flex items-center justify-center mb-12 -mt-16">
+	<form
+		on:submit|preventDefault={submitForm}
+		class="mx-auto max-w-[900px] bg-white shadow rounded py-12 lg:px-28 px-8"
+	>
+		<p class="md:text-3xl text-xl font-bold leading-7 text-center text-gray-700 ">
+			Let's Make a Contact Form
+		</p>
+		<div class="md:flex items-center mt-12">
+			<div class="md:w-72 flex flex-col">
+				<label for="name" class="text-base font-semibold leading-none text-gray-800 ">Name</label>
+				<input
+					bind:value={name}
+					id="name"
+					tabindex="0"
+					arial-label="Please input name"
+					type="text"
+					class="text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-100"
+					placeholder="Please input name"
+				/>
+			</div>
+			<div class="md:w-72 flex flex-col md:ml-6 md:mt-0 mt-4">
+				<label for="email" class="text-base font-semibold leading-none text-gray-800 "
+					>Email Address</label
+				>
+				<input
+					bind:value={email}
+					id="email"
+					tabindex="0"
+					arial-label="Please input email address"
+					type="email"
+					class="text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-100"
+					placeholder="Please input email address"
+				/>
+			</div>
+		</div>
+		<div class="md:flex items-center mt-8">
+			<div class="md:w-72 flex flex-col">
+				<label for="company" class="text-base font-semibold leading-none text-gray-800 "
+					>Company name</label
+				>
+				<input
+					bind:value={company}
+					id="company"
+					tabindex="0"
+					arial-label="Please input company name"
+					type="text"
+					class="text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-100"
+					placeholder="Please input company name"
+				/>
+			</div>
+			<div class="md:w-72 flex flex-col md:ml-6 md:mt-0 mt-4">
+				<label for="country" class="text-base font-semibold leading-none text-gray-800 "
+					>Country</label
+				>
+				<input
+					bind:value={country}
+					id="country"
+					tabindex="0"
+					arial-label="Please input country name"
+					type="text"
+					class="text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-100"
+					placeholder="Please input country name"
+				/>
+			</div>
+		</div>
+		<div>
+			<div class="w-full flex flex-col mt-8">
+				<label for="message" class="text-base font-semibold leading-none text-gray-800 "
+					>Message</label
+				>
+				<textarea
+					bind:value={message}
+					required={true}
+					tabindex="0"
+					aria-label="leave a message"
+					type="text"
+					id="message"
+					class="h-36 text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-100 resize-none"
+				/>
+			</div>
+		</div>
+		<p class="text-xs leading-3 text-gray-600  mt-4">
+			<span class="text-red-500 font-bold">Anything you put here is public!</span> Don't put your personal
+			data in the form please. Just use something fake, thanks!
+		</p>
+		<div
+			class="mt-9  flex flex-col space-y-3 md:flex-row md:space-y-0 md:space-x-3 items-center justify-center w-full"
+		>
+			<button
+				type="submit"
+				class="w-full md:w-[fit-content] flex items-center justify-center space-x-3 text-base font-semibold leading-none text-white py-4 px-10 bg-slate-700 rounded hover:bg-slate-600 focus:ring-2 focus:ring-offset-2 focus:ring-slate-700 focus:outline-none"
+			>
+				{#if loading}
+					<svg
+						class="w-5 h-5 animate-spin"
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+					>
+						<circle
+							class="opacity-25"
+							cx="12"
+							cy="12"
+							r="10"
+							stroke="currentColor"
+							stroke-width="4"
+						/>
+						<path
+							class="opacity-75"
+							fill="currentColor"
+							d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+						/>
+					</svg>
+				{/if}
+				<span> SUBMIT </span></button
+			>
+
+			<a href={googleSheetUrl}>
+				<button
+					type="button"
+					class="w-full md:w-[fit-content] flex items-center justify-center space-x-3  text-base font-semibold leading-none text-slate-600 py-4 px-10 bg-slate-200 rounded hover:bg-slate-300 focus:ring-2 focus:ring-offset-2 focus:ring-slate-700 focus:outline-none"
+				>
+					<span> VIEW SUBMISSIONS </span></button
+				>
+			</a>
+		</div>
+
+		{#if responseMessage}
+			<p class="text-center mt-6 font-light leading-3 text-blue-500">
+				{responseMessage}
+			</p>
+		{/if}
+	</form>
 </div>
