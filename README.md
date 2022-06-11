@@ -1,4 +1,16 @@
-# create-svelte
+# 📨 FormEasy Svelte Demo
+
+This is a demo application with a contact form. What is crazy, this runs 100% free using Vercel and FormEasy. The app allows you to create a new submission and links to Google Sheet where you can view all submissions. Additionally, an e-mail notification is sent to an admin e-mail address.
+
+## 🖼️ Pics, pics, pics!
+
+![Screenstor](docs/screen1.png)
+
+![Screenstor](docs/screen2.png)
+
+![Screenstor](docs/screen3.png)
+
+## 🤖 Auto-generated README by Svelte (Kit)
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 

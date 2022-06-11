@@ -40,6 +40,12 @@
 
 			const json = await response.json();
 			responseMessage = json.message;
+
+			name = '';
+			email = '';
+			company = '';
+			country = '';
+			message = '';
 		} catch (err: any) {
 			responseMessage = err.message ?? err;
 		} finally {
